@@ -23,8 +23,10 @@ dependencies {
 	//swagger
 	implementation 'io.springfox:springfox-swagger2:2.9.2'
 	implementation 'io.springfox:springfox-swagger-ui:2.9.2'
+	//jpa
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client' // MariaDB
 }
-
 tasks.named('test') {
 	useJUnitPlatform()
 }
