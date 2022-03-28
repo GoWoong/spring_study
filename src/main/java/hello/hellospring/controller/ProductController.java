@@ -1,6 +1,8 @@
 package hello.hellospring.controller;
 
 
+import hello.hellospring.common.Constants;
+import hello.hellospring.common.exception.KoException;
 import hello.hellospring.data.dto.ProductDto;
 import hello.hellospring.service.ProductService;
 import org.slf4j.Logger;
@@ -12,6 +14,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+
+import static hello.hellospring.common.Constants.*;
 
 @RestController
 @RequestMapping("/api/v1/product-api")
@@ -61,4 +65,9 @@ public class ProductController {
 
     @DeleteMapping(value = "/product/{productId}")
     public ProductDto deleteProduct(@PathVariable String productId){return null;}
+
+    @PostMapping(value = "/product/exception")
+    public void exceptionTest() throws KoException{
+        throw new KoException(ExceptionClass.PRODUCT, HttpStatus.BAD_REQUEST, "의도한 에러가 발생하였습니다");
+    }
 }
