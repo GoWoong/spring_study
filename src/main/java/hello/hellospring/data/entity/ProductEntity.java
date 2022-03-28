@@ -23,6 +23,7 @@ public class ProductEntity {
     Integer productPrice;
     Integer productStock;
 
+
     public ProductDto toDto(){
         return ProductDto.builder()
                 .productId(productId)

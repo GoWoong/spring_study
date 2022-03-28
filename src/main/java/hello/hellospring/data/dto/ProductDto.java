@@ -7,7 +7,8 @@ import lombok.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
+@Setter
+@Getter
 @Builder
 public class ProductDto {
 
@@ -15,6 +16,7 @@ public class ProductDto {
     private String productName;
     private int productPrice;
     private int productStock;
+
 
     public ProductEntity toEntity(){
         return ProductEntity.builder()

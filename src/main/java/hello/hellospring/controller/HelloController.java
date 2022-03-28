@@ -6,7 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 @Controller
 public class HelloController {
     //기본적인 get 요청
@@ -47,4 +46,6 @@ public class HelloController {
             this.name = name;
         }
     }
+
+
 }
